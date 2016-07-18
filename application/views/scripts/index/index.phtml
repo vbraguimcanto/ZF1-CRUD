@@ -1,22 +1,24 @@
-<?php
-    $this->title = "My Albums";
-    $this->headTitle($this->title);
-?>
-<p><a href="<?php echo $this->url(array('controller'=>'index',  'action'=>'add'));?>">Add new album</a></p>
-<table>
+<div class="container">
+    <table class="table table-hover">
     <tr>
-        <th>Title</th>
-        <th>Artist</th>
+        <th>Título</th>
+        <th>Artista</th>
         <th>&nbsp;</th>
     </tr>
     <?php foreach($this->albums as $album) : ?>
     <tr>
         <td><?php echo $this->escape($album->title);?></td>
         <td><?php echo $this->escape($album->artist);?></td>
-    <td>
-        <a href="<?php echo $this->url(array('controller'=>'index','action'=>'edit', 'id'=>$album->id));?>">Edit</a>
-        <a href="<?php echo $this->url(array('controller'=>'index','action'=>'delete', 'id'=>$album->id));?>">Delete</a>
+    <td style="text-align: right;">
+        <a href="<?php echo $this->url(array('controller'=>'index','action'=>'edit', 'id'=>$album->id));?>" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-refresh"></span> </a>
+        <a href="<?php echo $this->url(array('controller'=>'index','action'=>'delete', 'id'=>$album->id));?>" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-remove"></span> </a>
     </td>
     </tr>
         <?php endforeach; ?>
     </table>
+<?php
+    $this->headTitle($this->title);
+?>
+<p><a href="<?php echo $this->url(array('controller'=>'index',  'action'=>'add'));?>" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span></a></p>
+
+</div>

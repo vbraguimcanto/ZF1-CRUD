@@ -17,7 +17,7 @@ class IndexController extends Zend_Controller_Action
     public function addAction()
     {
         $form = new Application_Form_Album();
-        $form->submit->setLabel('Add');
+        $form->submit->setLabel('Adicionar');
         $this->view->form = $form;
         if ($this->getRequest()->isPost()) {
             $formData = $this->getRequest()->getPost();
@@ -36,7 +36,7 @@ class IndexController extends Zend_Controller_Action
     public function editAction()
     {
         $form = new Application_Form_Album();
-        $form->submit->setLabel('Save');
+        $form->submit->setLabel('Salvar');
         $this->view->form = $form;
         if ($this->getRequest()->isPost()) {
             $formData = $this->getRequest()->getPost();
@@ -75,13 +75,4 @@ class IndexController extends Zend_Controller_Action
             $this->view->album = $albums->getAlbum($id);
         }
     }
-
-
 }
-
-
-
-
-
-
-
